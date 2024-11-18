@@ -9,14 +9,21 @@
 }
 /* ------------------------- */
 
+.active {
+  @apply text-eminence-950 font-bold underline;
+}
+
 @layer components {
   .max-width-wrapper {
-    @apply max-w-[82.5rem] w-full mx-auto pc:px-0 px-4;
+    @apply max-w-7xl w-full mx-auto pc:px-0 px-4;
+  }
+  .btn {
+    @apply px-[1.38rem] py-[0.88rem] rounded-xl border-2 border-solid border-clr-shark shadow-btn text-base;
   }
 }
 
 @layer utilities {
   body {
-    @apply font-roboto;
+    @apply text-clr-shark bg-clr-alabaster font-roboto;
   }
 }
