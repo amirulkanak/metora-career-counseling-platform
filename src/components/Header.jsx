@@ -15,7 +15,7 @@ const Header = () => {
 
       <section className="max-width-wrapper mt-8">
         <div className="w-full max-w-6xl mx-auto rounded-xl overflow-clip">
-          <SwiperComponent />
+          {/* <SwiperComponent /> */}
         </div>
       </section>
     </header>
