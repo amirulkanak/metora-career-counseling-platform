@@ -18,7 +18,7 @@
     @apply max-w-7xl w-full mx-auto pc:px-0 px-4;
   }
   .btn {
-    @apply px-[1.38rem] py-[0.88rem] rounded-xl border-2 border-solid border-clr-shark shadow-btn text-base;
+    @apply px-[1.38rem] py-3 rounded-xl border-2 border-solid border-clr-shark shadow-btn text-base;
   }
 }
 

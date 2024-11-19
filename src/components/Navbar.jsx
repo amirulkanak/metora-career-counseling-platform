@@ -20,7 +20,7 @@ const Navbar = () => {
         </button>
 
         <div
-          className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-eminence-300 lg:bg-transparent px-6 py-5 lg:px-0 lg:py-0 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
+          className={`absolute right-4 z-20 top-full w-full max-w-[250px] rounded-lg bg-eminence-300 lg:bg-transparent px-6 py-5 lg:px-0 lg:py-0 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
             !open && 'hidden'
           } `}>
           {/* Links */}
