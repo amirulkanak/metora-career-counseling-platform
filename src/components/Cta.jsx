@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Cta = () => {
   return (
     <>
-      <section className="py-8 lg:py-16 bg-eminence-800">
+      <section className="mt-20 py-8 lg:py-16 bg-eminence-800">
         <div className="max-width-wrapper">
           <div className="relative z-10 overflow-hidden rounded bg-primary py-12 px-8 md:p-[70px]">
             <div className="flex flex-wrap items-center -mx-4">
