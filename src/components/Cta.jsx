@@ -9,16 +9,10 @@ const Cta = () => {
             <div className="flex flex-wrap items-center -mx-4">
               <div className="w-full px-4 lg:w-1/2">
                 <span className="block mb-4 text-base font-medium text-white">
-                  Find Your Dream Career With Us
+                  Explore personalized guidance for your professional journey.
                 </span>
                 <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[40px]/[48px] lg:mb-0">
-                  <span className="xs:block">
-                    Take the next step in your career path with
-                  </span>
-                  <span>
-                    our online, offline, group and one-on-one counseling
-                    sessions.
-                  </span>
+                  <span className="xs:block">Take Charge of Your Career</span>
                 </h2>
               </div>
               <div className="w-full px-4 lg:w-1/2">
