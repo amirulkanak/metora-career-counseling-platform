@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { validateEmail } from '../utils/validator';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import InputBox from './../components/ui/InputBox';
 
 const LoginPage = () => {
   document.title = 'Login | Mentora';
@@ -55,7 +56,18 @@ const LoginPage = () => {
                 </div>
               </form>
 
-              <p className="text-base text-body-color">
+              <p className="text-base text-left -mt-6 mb-5">
+                <span className="pr-0.5">Forgot Password? </span>
+                <Link
+                  to={'/auth/forgot-password'}
+                  className="hover:underline text-minsk-600">
+                  Reset Password
+                </Link>
+              </p>
+
+              <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
+
+              <p className="text-base">
                 <span className="pr-0.5">Don't have an account? </span>
                 <Link
                   to={'/auth/register'}
@@ -296,16 +308,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-const InputBox = ({ type, placeholder, name }) => {
-  return (
-    <div className="mb-6">
-      <input
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        className="w-full rounded-md border border-minsk-200 bg-transparent px-5 py-3 text-base outline-none focus-visible:shadow-none "
-      />
-    </div>
-  );
-};

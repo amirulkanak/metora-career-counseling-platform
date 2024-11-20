@@ -7,6 +7,7 @@ import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import ServiceDetailsPage from '../pages/ServiceDetailsPage';
 import MyProfile from '../pages/MyProfile';
+import ForgetPasswordPage from '../pages/ForgetPasswordPage';
 
 const routes = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
       {
         path: '/auth/register',
         element: <RegisterPage />,
+      },
+      {
+        path: '/auth/forgot-password',
+        element: <ForgetPasswordPage />,
       },
     ],
   },

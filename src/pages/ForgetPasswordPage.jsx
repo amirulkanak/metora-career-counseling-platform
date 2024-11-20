@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import { validateEmail, validatePasswordForSignUp } from '../utils/validator';
+import { validateEmail } from '../utils/validator';
 import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
-import { HiEyeOff } from 'react-icons/hi';
-import { HiEye } from 'react-icons/hi2';
-import PasswordInput from './../components/ui/PasswordInput';
 import InputBox from './../components/ui/InputBox';
 
-const RegisterPage = () => {
-  document.title = 'Sign Up | Mentora';
+const ForgetPasswordPage = () => {
+  document.title = 'Forget Password | Mentora';
   const [error, setError] = useState('');
 
   const handleSubmit = (event) => {
@@ -17,30 +13,10 @@ const RegisterPage = () => {
     const formData = Object.fromEntries(new FormData(event.target));
     console.log(formData);
 
-    if (!formData.fullName) {
-      setError('Full name is required.');
-      return;
-    }
-
-    if (!formData.photoUrl) {
-      setError('Photo url is required.');
-      return;
-    }
-
     if (!validateEmail(formData.email)) {
       setError('Invalid email. Please check email address.');
       return;
     }
-
-    if (!validatePasswordForSignUp(formData.password)) {
-      setError(
-        'Password must includes 6 characters, an uppercase and a lowercase letters.'
-      );
-      return;
-    }
-
-    // clear input fields after submit
-    // event.target.reset();
   };
 
   return (
@@ -50,22 +26,15 @@ const RegisterPage = () => {
           <div className="w-full px-4">
             <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-eminence-100/10 shadow-xl px-10 py-16 text-center sm:px-12 md:px-[60px]">
               <div className="mb-10 text-center md:mb-16">
-                <h2 className="text-3xl font-light">Sign Up</h2>
-                <p className="text-base mt-2">Create an account to continue</p>
+                <h2 className="text-3xl font-light">Reset Password</h2>
+                <p className="text-base mt-2">
+                  Please your enter email to reset Password
+                </p>
               </div>
 
               {/* Form */}
               <form onSubmit={handleSubmit}>
-                <InputBox type="text" name="fullName" placeholder="Full name" />
-                <InputBox type="text" name="photoUrl" placeholder="Photo URL" />
                 <InputBox type="email" name="email" placeholder="Email" />
-
-                <PasswordInput
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                />
-
                 {/* error message */}
                 <span>
                   {error && <div className="text-red-500 mb-1">{error}</div>}
@@ -74,16 +43,14 @@ const RegisterPage = () => {
                 <div className="mb-10">
                   <input
                     type="submit"
-                    value="Sign Up"
+                    value="Login"
                     className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-minsk-500 text-white transition hover:bg-opacity-90"
                   />
                 </div>
               </form>
 
-              <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
-
-              <p className="text-base text-body-color">
-                <span className="pr-0.5">Already have an account? </span>
+              <p className="text-base text-left -mt-6 mb-5">
+                <span className="pr-0.5">Remember Password? </span>
                 <Link
                   to={'/auth/login'}
                   className="hover:underline text-minsk-600">
@@ -93,10 +60,16 @@ const RegisterPage = () => {
 
               <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
 
-              <div className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-eminence-800/5  transition hover:bg-eminence-600 hover:text-clr-alabaster">
-                <FcGoogle className="text-2xl inline mr-2" />
-                Sign up with Google
-              </div>
+              <p className="text-base">
+                <span className="pr-0.5">Don't have an account? </span>
+                <Link
+                  to={'/auth/register'}
+                  className="hover:underline text-minsk-600">
+                  Sign-up
+                </Link>
+              </p>
+
+              <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
 
               <div>
                 <span className="absolute right-1 top-1">
@@ -322,4 +295,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default ForgetPasswordPage;
