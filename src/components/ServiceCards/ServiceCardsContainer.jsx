@@ -1,10 +1,15 @@
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
+import LoadingSpinner from '../LoadingSpinner';
 
 const ServiceCardsContainer = () => {
   const cardsData = useLoaderData();
   if (!cardsData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="max-width-wrapper flex items-center justify-center">
+        <LoadingSpinner size={3} />
+      </div>
+    );
   }
   return (
     <div className="max-width-wrapper">
