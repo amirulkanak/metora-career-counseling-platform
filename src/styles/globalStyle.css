@@ -13,6 +13,14 @@
   @apply text-eminence-950 font-bold underline;
 }
 
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
 @layer components {
   .max-width-wrapper {
     @apply max-w-7xl w-full mx-auto pc:px-0 px-4;

@@ -6,7 +6,7 @@ import { LiaAlignLeftSolid } from 'react-icons/lia';
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="max-width-wrapper relative mt-5 flex items-center justify-between py-5 lg:py-0">
+    <nav className="max-width-wrapper relative mt-8 flex items-center justify-between py-5 lg:py-0">
       {/* Logo */}
       <NavLink to={'/'} className="w-40">
         <img src={mentoraLogo} alt="Mentora Logo" />
@@ -29,6 +29,21 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink to={'/404'}>404</NavLink>
+            <NavLink to={'/my-profile'}>My Profile</NavLink>
+
+            {/* user Pic */}
+
+            <div className="has-tooltip h-[42px] w-[42px] rounded-full border border-eminence-500">
+              <img
+                src="https://cdn.tailgrids.com/2.2/assets/core-components/images/avatar/image-05.jpg"
+                alt="avatar"
+                className="h-full w-full rounded-full object-cover object-center"
+              />
+              <span className="tooltip text-base text-clr-shark -mt-16 -ml-8">
+                Devid Milinear
+              </span>
+            </div>
+
             <NavLink
               to={'/auth/login'}
               className="btn bg-clr-alabaster hover:bg-eminence-700 hover:text-clr-alabaster">

@@ -6,6 +6,7 @@ import AuthLayout from '../layouts/AuthLayout';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import ServiceDetailsPage from '../pages/ServiceDetailsPage';
+import MyProfile from '../pages/MyProfile';
 
 const routes = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const routes = createBrowserRouter([
         path: '/',
         element: <HomePage />,
         loader: () => fetch('/servicesData.json').then((res) => res.json()),
+      },
+      {
+        path: 'my-profile',
+        element: <MyProfile />,
       },
       {
         path: 'service/:serviceCard_id',

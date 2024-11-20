@@ -44,7 +44,7 @@ const ServiceDetailsPage = () => {
     return <div>Loading...</div>;
   }
   return (
-    <section className="pb-16 bg-eminence-100 -mt-2">
+    <section className="pb-16 bg-eminence-100 -mt-2 min-h-[80rem]">
       <div className="max-width-wrapper mt-20">
         <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6 mt-6">
           <img
