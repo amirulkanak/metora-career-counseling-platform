@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import StarRatings from '../components/StarRatings';
 import { useLoaderData, useParams } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const ServiceDetailsPage = () => {
   document.title = 'Service Details | Mentora';
@@ -8,6 +9,7 @@ const ServiceDetailsPage = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [error, setError] = useState(null);
+  const { user } = useAuth();
 
   const cardsData = useLoaderData();
   const { serviceCard_id } = useParams();
@@ -34,7 +36,7 @@ const ServiceDetailsPage = () => {
       const currentTime = new Date().toLocaleString();
       setComments([
         ...comments,
-        { text: newComment, time: currentTime, user: 'User Name' },
+        { text: newComment, time: currentTime, user: user.displayName },
       ]);
       setNewComment('');
     }

@@ -17,6 +17,10 @@ const UserAuthContextProvider = ({ children }) => {
   // Create a state to store the user
   const [user, setUser] = useState(null);
 
+  // Create a state for checking if the user is authenticated
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  console.log(isAuthenticated);
+
   // Create a state to store the loading state
   const [loading, setLoading] = useState(true);
 
@@ -47,6 +51,11 @@ const UserAuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
       setLoading(false);
     });
 
@@ -61,6 +70,8 @@ const UserAuthContextProvider = ({ children }) => {
     logIn,
     logOut,
     loginWithGooglePopup,
+    isAuthenticated,
+    loading,
   };
 
   return (

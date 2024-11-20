@@ -8,6 +8,7 @@ import RegisterPage from '../pages/RegisterPage';
 import ServiceDetailsPage from '../pages/ServiceDetailsPage';
 import MyProfile from '../pages/MyProfile';
 import ForgetPasswordPage from '../pages/ForgetPasswordPage';
+import PrivateRoute from './PrivateRoute';
 
 const routes = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const routes = createBrowserRouter([
       },
       {
         path: 'service/:serviceCard_id',
-        element: <ServiceDetailsPage />,
+        element: (
+          <PrivateRoute>
+            <ServiceDetailsPage />
+          </PrivateRoute>
+        ),
         loader: () => fetch('/servicesData.json').then((res) => res.json()),
       },
     ],

@@ -1,21 +1,25 @@
 import { useState } from 'react';
 import { validateEmail } from '../utils/validator';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import InputBox from './../components/ui/InputBox';
 import useAuth from './../hooks/useAuth';
+import notify from '../utils/notify';
 
 const LoginPage = () => {
   document.title = 'Login | Mentora';
+  window.scrollTo(0, 0);
   const [error, setError] = useState('');
-  const { loginWithGooglePopup, setUser, user } = useAuth();
-  console.log(user);
+  const { loginWithGooglePopup, setUser } = useAuth();
+  const navigate = useNavigate();
 
   // Login with Google
   const handleLoginWithGoogle = () => {
     loginWithGooglePopup()
       .then((result) => {
         setUser(result.user);
+        notify.success(`Welcome ${result.user.displayName}`);
+        navigate('/');
       })
       .catch((error) => {
         setError(

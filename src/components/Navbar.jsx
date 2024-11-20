@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import mentoraLogo from '../assets/images/mentora-logo.png';
 import { LiaAlignLeftSolid } from 'react-icons/lia';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { user, logOut } = useAuth();
+
   return (
     <nav className="max-width-wrapper relative mt-8 flex items-center justify-between py-5 lg:py-0">
       {/* Logo */}
@@ -29,31 +32,45 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink to={'/404'}>404</NavLink>
-            <NavLink to={'/my-profile'}>My Profile</NavLink>
+            {user && <NavLink to={'/my-profile'}>My Profile</NavLink>}
 
             {/* user Pic */}
 
-            <div className="has-tooltip h-[42px] w-[42px] rounded-full border border-eminence-500">
-              <img
-                src="https://cdn.tailgrids.com/2.2/assets/core-components/images/avatar/image-05.jpg"
-                alt="avatar"
-                className="h-full w-full rounded-full object-cover object-center"
-              />
-              <span className="tooltip text-base text-clr-shark -mt-16 -ml-8">
-                Devid Milinear
-              </span>
-            </div>
+            {user && (
+              <div className="has-tooltip h-[42px] w-[42px] rounded-full border border-eminence-500">
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName}
+                  className="h-full w-full rounded-full object-cover object-center"
+                />
+                <span className="tooltip text-base text-clr-shark -mt-16 -ml-8">
+                  {user.displayName}
+                </span>
+              </div>
+            )}
 
-            <NavLink
-              to={'/auth/login'}
-              className="btn bg-clr-alabaster hover:bg-eminence-700 hover:text-clr-alabaster">
-              Login
-            </NavLink>
-            <NavLink
-              to={'/auth/register'}
-              className="btn bg-eminence-700 hover:bg-eminence-600 text-clr-alabaster">
-              Register
-            </NavLink>
+            {user && (
+              <button
+                onClick={logOut}
+                className="btn bg-clr-alabaster hover:bg-eminence-700 hover:text-clr-alabaster">
+                Logout
+              </button>
+            )}
+
+            {!user && (
+              <NavLink
+                to={'/auth/login'}
+                className="btn bg-clr-alabaster hover:bg-eminence-700 hover:text-clr-alabaster">
+                Login
+              </NavLink>
+            )}
+            {!user && (
+              <NavLink
+                to={'/auth/register'}
+                className="btn bg-eminence-700 hover:bg-eminence-600 text-clr-alabaster">
+                Register
+              </NavLink>
+            )}
           </ul>
         </div>
       </div>
