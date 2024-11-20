@@ -1,19 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const cardData = {
-  id: 1,
-  image: 'https://example.com/images/career-counseling-session.jpg',
-  service_name: 'Career Counseling Sessions',
-  category: 'Online',
-  description:
-    'One-on-one sessions to help you identify your career goals and create a roadmap to achieve them.',
-  pricing: 50,
-  duration_with_date: '2024-12-05 5:00-6:00 PM',
-  counselor: 'Dr. Sarah Johnson',
-  rating: 4.8,
-};
-
-const ServiceCard = () => {
+const ServiceCard = ({ cardData }) => {
   return (
     <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden border border-minsk-100">
       <img

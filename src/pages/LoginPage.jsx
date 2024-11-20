@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
+  document.title = 'Login | Mentora';
   const [error, setError] = useState('');
 
   const handleSubmit = (event) => {

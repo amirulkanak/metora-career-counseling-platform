@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "image": "https://example.com/images/career-counseling-session.jpg",
+    "service_name": "Career Counseling Sessions",
+    "category": "Online",
+    "description": "One-on-one sessions to help you identify your career goals and create a roadmap to achieve them.",
+    "pricing": 50,
+    "date": "2024-12-05",
+    "duration": "5:00-6:00 PM",
+    "counselor": "Dr. Sarah Johnson",
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "image": "https://example.com/images/resume-review.jpg",
+    "service_name": "Resume Review",
+    "category": "Online",
+    "description": "Expert feedback to optimize your resume and highlight your strengths for your dream job.",
+    "pricing": 30,
+    "date": "2024-12-06",
+    "duration": "2:00-3:00 PM",
+    "counselor": "Mr. John Carter",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "image": "https://example.com/images/group-workshop.jpg",
+    "service_name": "Group Career Workshop",
+    "category": "Group",
+    "description": "Interactive group sessions on building confidence and improving job search strategies.",
+    "pricing": 20,
+    "date": "2024-12-07",
+    "duration": "3:00-5:00 PM",
+    "counselor": "Ms. Rachel Lee",
+    "rating": 4.6
+  },
+  {
+    "id": 4,
+    "image": "https://example.com/images/mock-interview.jpg",
+    "service_name": "Mock Interview Practice",
+    "category": "Offline",
+    "description": "Simulated interview sessions to prepare you for real-life job interviews.",
+    "pricing": 40,
+    "date": "2024-12-08",
+    "duration": "11:00 AM-12:00 PM",
+    "counselor": "Mr. David Brown",
+    "rating": 4.9
+  },
+  {
+    "id": 5,
+    "image": "https://example.com/images/networking-strategy.jpg",
+    "service_name": "Networking Strategy Guidance",
+    "category": "Online",
+    "description": "Learn effective networking strategies to build professional connections.",
+    "pricing": 35,
+    "date": "2024-12-09",
+    "duration": "4:00-5:00 PM",
+    "counselor": "Ms. Olivia Green",
+    "rating": 4.5
+  },
+  {
+    "id": 6,
+    "image": "https://example.com/images/salary-negotiation.jpg",
+    "service_name": "Salary Negotiation Tips",
+    "category": "Online",
+    "description": "Expert advice on how to negotiate your salary effectively and confidently.",
+    "pricing": 25,
+    "date": "2024-12-10",
+    "duration": "6:00-7:00 PM",
+    "counselor": "Dr. Michael Clark",
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "image": "https://example.com/images/career-switch.jpg",
+    "service_name": "Career Transition Planning",
+    "category": "Online",
+    "description": "Comprehensive guidance for individuals planning to switch careers.",
+    "pricing": 60,
+    "date": "2024-12-11",
+    "duration": "2:00-3:30 PM",
+    "counselor": "Ms. Emily Watson",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "image": "https://example.com/images/skills-assessment.jpg",
+    "service_name": "Skills Assessment Session",
+    "category": "Offline",
+    "description": "Detailed assessment to identify your core strengths and areas for improvement.",
+    "pricing": 45,
+    "date": "2024-12-12",
+    "duration": "10:00-11:00 AM",
+    "counselor": "Mr. Brian Adams",
+    "rating": 4.7
+  },
+  {
+    "id": 9,
+    "image": "https://example.com/images/mentorship-program.jpg",
+    "service_name": "Professional Mentorship Program",
+    "category": "Group",
+    "description": "Join a structured mentorship program to grow and learn from industry leaders.",
+    "pricing": 75,
+    "date": "2024-12-13",
+    "duration": "5:00-7:00 PM",
+    "counselor": "Dr. Susan Taylor",
+    "rating": 4.9
+  },
+  {
+    "id": 10,
+    "image": "https://example.com/images/personal-branding.jpg",
+    "service_name": "Personal Branding Workshop",
+    "category": "Online",
+    "description": "Build a compelling personal brand to stand out in the job market.",
+    "pricing": 50,
+    "date": "2024-12-14",
+    "duration": "3:00-5:00 PM",
+    "counselor": "Ms. Laura Harris",
+    "rating": 4.8
+  }
+]

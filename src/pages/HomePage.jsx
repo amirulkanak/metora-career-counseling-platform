@@ -4,6 +4,7 @@ import ServiceSection from '../components/ServiceSection';
 import Header from './../components/Header';
 
 const HomePage = () => {
+  document.title = 'Home | Mentora';
   return (
     <>
       <Header />
