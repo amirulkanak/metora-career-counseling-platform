@@ -5,6 +5,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import AuthLayout from '../layouts/AuthLayout';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
+import ServiceDetailsPage from '../pages/ServiceDetailsPage';
 
 const routes = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <HomePage />,
+      },
+      {
+        path: 'service/:service_id',
+        element: <ServiceDetailsPage />,
       },
     ],
   },

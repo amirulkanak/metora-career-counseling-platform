@@ -1,5 +1,6 @@
 import Cta from '../components/Cta';
 import Feedback from '../components/Feedback';
+import ServiceSection from '../components/ServiceSection';
 import Header from './../components/Header';
 
 const HomePage = () => {
@@ -7,10 +8,10 @@ const HomePage = () => {
     <>
       <Header />
       <main>
-        <h1>Welcome to the home page!</h1>
+        <ServiceSection />
+        <Feedback />
+        <Cta />
       </main>
-      <Feedback />
-      <Cta />
     </>
   );
 };
