@@ -2,7 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../services/auth/firebase/firebase';
 import {
   createUserWithEmailAndPassword,
+  signInWithPopup,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
@@ -28,6 +30,14 @@ const UserAuthContextProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // Google Auth Provider
+  const googleProvider = new GoogleAuthProvider();
+
+  // custom parameters for Google Auth Provider to prompt user to select account
+  googleProvider.setCustomParameters({ prompt: 'select_account' });
+
+  // Sign in with Google using a popup
+  const loginWithGooglePopup = () => signInWithPopup(auth, googleProvider);
   // Create a function to log out a user
   const logOut = () => {
     return signOut(auth);
@@ -46,9 +56,11 @@ const UserAuthContextProvider = ({ children }) => {
   // Create a value for the context
   const value = {
     user,
+    setUser,
     signUp,
     logIn,
     logOut,
+    loginWithGooglePopup,
   };
 
   return (

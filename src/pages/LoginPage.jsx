@@ -3,11 +3,28 @@ import { validateEmail } from '../utils/validator';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import InputBox from './../components/ui/InputBox';
+import useAuth from './../hooks/useAuth';
 
 const LoginPage = () => {
   document.title = 'Login | Mentora';
   const [error, setError] = useState('');
+  const { loginWithGooglePopup, setUser, user } = useAuth();
+  console.log(user);
 
+  // Login with Google
+  const handleLoginWithGoogle = () => {
+    loginWithGooglePopup()
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => {
+        setError(
+          'Failed to login with Google. Please try again. ' + error.message
+        );
+      });
+  };
+
+  // Form submit handler
   const handleSubmit = (event) => {
     event.preventDefault();
     setError('');
@@ -78,7 +95,9 @@ const LoginPage = () => {
 
               <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
 
-              <div className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-eminence-800/5  transition hover:bg-eminence-600 hover:text-clr-alabaster">
+              <div
+                onClick={handleLoginWithGoogle}
+                className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-eminence-800/5  transition hover:bg-eminence-600 hover:text-clr-alabaster">
                 <FcGoogle className="text-2xl inline mr-2" />
                 Login with Google
               </div>
