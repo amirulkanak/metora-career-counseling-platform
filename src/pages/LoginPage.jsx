@@ -54,6 +54,7 @@ const LoginPage = () => {
         navigate(state ? state : '/');
       })
       .catch((error) => {
+        notify.error('Error');
         setError(
           'Failed to login with Google. Please try again. ' + error.message
         );

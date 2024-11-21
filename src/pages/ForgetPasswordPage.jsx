@@ -65,7 +65,7 @@ const ForgetPasswordPage = () => {
                 <div className="mb-10">
                   <input
                     type="submit"
-                    value="Login"
+                    value="Reset Password"
                     className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-minsk-500 text-white transition hover:bg-opacity-90"
                   />
                 </div>

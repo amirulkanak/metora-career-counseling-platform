@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://example.com/images/career-counseling-session.jpg",
+    "image": "https://i.ibb.co.com/4PbjmG7/photo-1543269664-56d93c1b41a6-q-80-w-2070-auto-format-fit-crop-ixlib-rb-4-0.jpg",
     "service_name": "Career Counseling Sessions",
     "category": "Online",
     "description": "One-on-one sessions to help you identify your career goals and create a roadmap to achieve them.",
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "image": "https://example.com/images/resume-review.jpg",
+    "image": "https://i.ibb.co.com/VHz3XPN/pexels-goumbik-590016.jpg",
     "service_name": "Resume Review",
     "category": "Online",
     "description": "Expert feedback to optimize your resume and highlight your strengths for your dream job.",
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "image": "https://example.com/images/group-workshop.jpg",
+    "image": "https://i.ibb.co.com/K0XvHDh/pexels-pavel-danilyuk-8761336.jpg",
     "service_name": "Group Career Workshop",
     "category": "Group",
     "description": "Interactive group sessions on building confidence and improving job search strategies.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "image": "https://example.com/images/mock-interview.jpg",
+    "image": "https://i.ibb.co.com/gJJRRbn/pexels-sora-shimazaki-5668858.jpg",
     "service_name": "Mock Interview Practice",
     "category": "Offline",
     "description": "Simulated interview sessions to prepare you for real-life job interviews.",
@@ -49,7 +49,7 @@
   },
   {
     "id": 5,
-    "image": "https://example.com/images/networking-strategy.jpg",
+    "image": "https://i.ibb.co.com/gmkDVH3/pexels-fauxels-3183197.jpg",
     "service_name": "Networking Strategy Guidance",
     "category": "Online",
     "description": "Learn effective networking strategies to build professional connections.",
@@ -61,7 +61,7 @@
   },
   {
     "id": 6,
-    "image": "https://example.com/images/salary-negotiation.jpg",
+    "image": "https://i.ibb.co.com/7W1L9xd/pexels-edmond-dantes-4344860.jpg",
     "service_name": "Salary Negotiation Tips",
     "category": "Online",
     "description": "Expert advice on how to negotiate your salary effectively and confidently.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 7,
-    "image": "https://example.com/images/career-switch.jpg",
+    "image": "https://i.ibb.co.com/xzFFT82/pexels-alexander-suhorucov-6457521.jpg",
     "service_name": "Career Transition Planning",
     "category": "Online",
     "description": "Comprehensive guidance for individuals planning to switch careers.",
@@ -85,7 +85,7 @@
   },
   {
     "id": 8,
-    "image": "https://example.com/images/skills-assessment.jpg",
+    "image": "https://i.ibb.co.com/LvrtfnC/pexels-andy-barbour-6684046.jpg",
     "service_name": "Skills Assessment Session",
     "category": "Offline",
     "description": "Detailed assessment to identify your core strengths and areas for improvement.",
@@ -97,7 +97,7 @@
   },
   {
     "id": 9,
-    "image": "https://example.com/images/mentorship-program.jpg",
+    "image": "https://i.ibb.co.com/bKPvYGY/pexels-fauxels-3184328.jpg",
     "service_name": "Professional Mentorship Program",
     "category": "Group",
     "description": "Join a structured mentorship program to grow and learn from industry leaders.",
@@ -109,7 +109,7 @@
   },
   {
     "id": 10,
-    "image": "https://example.com/images/personal-branding.jpg",
+    "image": "https://i.ibb.co.com/QJ5Zzbc/pexels-anntarazevich-5963137.jpg",
     "service_name": "Personal Branding Workshop",
     "category": "Online",
     "description": "Build a compelling personal brand to stand out in the job market.",

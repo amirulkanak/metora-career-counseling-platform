@@ -4,7 +4,7 @@ import mentoraLogo from '../assets/images/mentora-logo.png';
 const Footer = () => {
   return (
     <>
-      <footer className="relative mt-auto kanak z-10 pb-4 pt-20 lg:pt-[120px]">
+      <footer className="relative mt-auto z-10 pb-4 pt-20 lg:pt-[120px]">
         <div className="max-width-wrapper">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">

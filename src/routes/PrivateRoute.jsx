@@ -3,7 +3,7 @@ import useAuth from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const PrivateRoute = ({ children }) => {
-  const { loading, isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
   const { pathname } = useLocation();
 
   if (loading) {

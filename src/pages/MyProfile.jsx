@@ -38,7 +38,7 @@ const MyProfile = () => {
   };
 
   return (
-    <section className="max-width-wrapper mt-20 kanak min-h-[60rem] mb-20">
+    <section className="max-width-wrapper mt-20 min-h-[60rem] mb-20">
       <div className="mx-auto group before:hover:scale-95 before:hover:h-72 before:hover:w-80 before:hover:rounded-b-2xl before:transition-all before:duration-500 before:content-[''] before:w-80 before:h-24 before:rounded-t-2xl before:bg-gradient-to-bl from-sky-200 via-eminence-200 to-minsk-700 before:absolute before:top-0 w-80 h-72 relative bg-slate-50 flex flex-col items-center justify-center gap-2 text-center rounded-2xl overflow-hidden">
         <div className="w-28 h-28 mt-8 rounded-full border-4 border-slate-50 z-10 group-hover:scale-150 group-hover:-translate-x-24  group-hover:-translate-y-20 transition-all duration-500">
           <img
@@ -60,7 +60,7 @@ const MyProfile = () => {
 
       {/* Update form */}
       {formOpen && (
-        <div className="mt-16 kanak mx-auto bg-slate-50 max-w-80 p-6 rounded-2xl">
+        <div className="mt-16 mx-auto bg-slate-50 max-w-80 p-6 rounded-2xl">
           <form onSubmit={handleProfileUpdate}>
             <div className="mb-6">
               <input

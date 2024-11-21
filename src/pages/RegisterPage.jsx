@@ -9,6 +9,7 @@ import notify from '../utils/notify';
 
 const RegisterPage = () => {
   document.title = 'Sign Up | Mentora';
+  window.scrollTo(0, 0);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { setUser, signUp, updateUserProfile, loginWithGooglePopup } =
@@ -53,6 +54,7 @@ const RegisterPage = () => {
         navigate('/');
       })
       .catch((error) => {
+        notify.error('Error');
         setError(
           'Failed to login with Google. Please try again. ' + error.message
         );
