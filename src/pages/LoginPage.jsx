@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { validateEmail } from '../utils/validator';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import InputBox from './../components/ui/InputBox';
 import useAuth from './../hooks/useAuth';
@@ -10,7 +10,9 @@ const LoginPage = () => {
   document.title = 'Login | Mentora';
   window.scrollTo(0, 0);
   const [error, setError] = useState('');
-  const { loginWithGooglePopup, setUser } = useAuth();
+  const { loginWithGooglePopup, setUser, logIn, forgotEmail, setForgotEmail } =
+    useAuth();
+  const { state } = useLocation();
   const navigate = useNavigate();
 
   // Login with Google
@@ -19,7 +21,7 @@ const LoginPage = () => {
       .then((result) => {
         setUser(result.user);
         notify.success(`Welcome ${result.user.displayName}`);
-        navigate('/');
+        navigate(state ? state : '/');
       })
       .catch((error) => {
         setError(
@@ -33,7 +35,6 @@ const LoginPage = () => {
     event.preventDefault();
     setError('');
     const formData = Object.fromEntries(new FormData(event.target));
-    console.log(formData);
 
     if (!validateEmail(formData.email)) {
       setError('Invalid email. Please check email address.');
@@ -43,6 +44,20 @@ const LoginPage = () => {
     if (!formData.password) {
       setError('Password is required');
     }
+
+    setForgotEmail(formData.email);
+
+    logIn(formData.email, formData.password)
+      .then((result) => {
+        setUser(result.user);
+        notify.success(`Welcome ${result.user.displayName}`);
+        navigate(state ? state : '/');
+      })
+      .catch((error) => {
+        setError(
+          'Failed to login with Google. Please try again. ' + error.message
+        );
+      });
   };
   return (
     <section className="bg-gray-1 py-20 lg:py-[120px]">

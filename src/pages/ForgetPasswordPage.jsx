@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { validateEmail } from '../utils/validator';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InputBox from './../components/ui/InputBox';
+import useAuth from '../hooks/useAuth';
+import notify from '../utils/notify';
 
 const ForgetPasswordPage = () => {
   document.title = 'Forget Password | Mentora';
   const [error, setError] = useState('');
+  const { sendPasswordResetEmailToUser, forgotEmail, setForgotEmail } =
+    useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +21,17 @@ const ForgetPasswordPage = () => {
       setError('Invalid email. Please check email address.');
       return;
     }
+    sendPasswordResetEmailToUser(formData.email)
+      .then((result) => {
+        notify.success(`Check your email for password reset link.`);
+        setForgotEmail('');
+        window.location.href = 'https://mail.google.com/mail/?tab=rm&ogbl';
+      })
+      .catch((error) => {
+        setError(
+          'Failed to login with Google. Please try again. ' + error.message
+        );
+      });
   };
 
   return (
@@ -34,7 +49,15 @@ const ForgetPasswordPage = () => {
 
               {/* Form */}
               <form onSubmit={handleSubmit}>
-                <InputBox type="email" name="email" placeholder="Email" />
+                <div className="mb-6">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    defaultValue={forgotEmail}
+                    className="w-full rounded-md border border-minsk-200 bg-transparent px-5 py-3 text-base outline-none focus-visible:shadow-none"
+                  />
+                </div>
                 {/* error message */}
                 <span>
                   {error && <div className="text-red-500 mb-1">{error}</div>}

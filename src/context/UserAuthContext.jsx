@@ -6,6 +6,8 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signOut,
+  updateProfile,
+  sendPasswordResetEmail,
   onAuthStateChanged,
 } from 'firebase/auth';
 
@@ -19,19 +21,34 @@ const UserAuthContextProvider = ({ children }) => {
 
   // Create a state for checking if the user is authenticated
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  console.log(isAuthenticated);
 
   // Create a state to store the loading state
   const [loading, setLoading] = useState(true);
+
+  // create a state to store email for forgot password
+  const [forgotEmail, setForgotEmail] = useState('');
 
   // Create a function to sign up a user
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  // Create a function to update the user profile
+  const updateUserProfile = (displayName, photoURL) => {
+    return updateProfile(auth.currentUser, {
+      displayName: displayName,
+      photoURL: photoURL,
+    });
+  };
+
   // Create a function to log in a user
   const logIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  // Create a function to send a password reset email
+  const sendPasswordResetEmailToUser = (email) => {
+    return sendPasswordResetEmail(auth, email);
   };
 
   // Google Auth Provider
@@ -42,6 +59,7 @@ const UserAuthContextProvider = ({ children }) => {
 
   // Sign in with Google using a popup
   const loginWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+
   // Create a function to log out a user
   const logOut = () => {
     return signOut(auth);
@@ -72,6 +90,10 @@ const UserAuthContextProvider = ({ children }) => {
     loginWithGooglePopup,
     isAuthenticated,
     loading,
+    sendPasswordResetEmailToUser,
+    updateUserProfile,
+    forgotEmail,
+    setForgotEmail,
   };
 
   return (
@@ -82,7 +104,3 @@ const UserAuthContextProvider = ({ children }) => {
 };
 
 export default UserAuthContextProvider;
-// Create a custom hook to use the Auth Context
-// export const useAuth = () => {
-//   return useContext(UserAuthContext);
-// };

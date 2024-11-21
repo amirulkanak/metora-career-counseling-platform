@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { validateEmail, validatePasswordForSignUp } from '../utils/validator';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import { HiEyeOff } from 'react-icons/hi';
-import { HiEye } from 'react-icons/hi2';
 import PasswordInput from './../components/ui/PasswordInput';
 import InputBox from './../components/ui/InputBox';
+import useAuth from './../hooks/useAuth';
+import notify from '../utils/notify';
 
 const RegisterPage = () => {
   document.title = 'Sign Up | Mentora';
   const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { setUser, signUp, updateUserProfile, loginWithGooglePopup } =
+    useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,8 +42,37 @@ const RegisterPage = () => {
       return;
     }
 
-    // clear input fields after submit
-    // event.target.reset();
+    // Sign up the user
+    signUp(formData.email, formData.password)
+      .then((result) => {
+        setUser(result.user);
+        // update user profile
+        updateUserProfile(formData.fullName, formData.photoUrl);
+        notify.success(`Sign up Successful`);
+        // clear input fields after submit
+        event.target.reset();
+        navigate('/');
+      })
+      .catch((error) => {
+        setError(
+          'Failed to login with Google. Please try again. ' + error.message
+        );
+      });
+  };
+
+  // Login with Google
+  const handleLoginWithGoogle = () => {
+    loginWithGooglePopup()
+      .then((result) => {
+        setUser(result.user);
+        notify.success(`Welcome ${result.user.displayName}`);
+        navigate('/');
+      })
+      .catch((error) => {
+        setError(
+          'Failed to login with Google. Please try again. ' + error.message
+        );
+      });
   };
 
   return (
@@ -93,7 +125,9 @@ const RegisterPage = () => {
 
               <div className="my-6 text-base h-[1px] bg-eminence-700"></div>
 
-              <div className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-eminence-800/5  transition hover:bg-eminence-600 hover:text-clr-alabaster">
+              <div
+                onClick={handleLoginWithGoogle}
+                className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-eminence-800/5  transition hover:bg-eminence-600 hover:text-clr-alabaster">
                 <FcGoogle className="text-2xl inline mr-2" />
                 Sign up with Google
               </div>

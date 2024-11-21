@@ -1,10 +1,11 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const PrivateRoute = ({ children }) => {
   const { loading, isAuthenticated } = useAuth();
-
+  const { pathname } = useLocation();
+  console.log(pathname);
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -13,7 +14,11 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  return isAuthenticated ? children : <Navigate to="/auth/login" replace />;
+  return isAuthenticated ? (
+    children
+  ) : (
+    <Navigate to="/auth/login" state={pathname} replace />
+  );
 };
 
 export default PrivateRoute;

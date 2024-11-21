@@ -23,7 +23,11 @@ const routes = createBrowserRouter([
       },
       {
         path: 'my-profile',
-        element: <MyProfile />,
+        element: (
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'service/:serviceCard_id',

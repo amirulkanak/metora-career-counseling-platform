@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import StarRatings from '../components/StarRatings';
 import { useLoaderData, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const ServiceDetailsPage = () => {
   document.title = 'Service Details | Mentora';
@@ -43,7 +44,11 @@ const ServiceDetailsPage = () => {
   };
 
   if (!cardData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size={5} />
+      </div>
+    );
   }
   return (
     <section className="pb-16 bg-eminence-100 -mt-2 min-h-[80rem]">
