@@ -9,6 +9,7 @@ import ServiceDetailsPage from '../pages/ServiceDetailsPage';
 import MyProfile from '../pages/MyProfile';
 import ForgetPasswordPage from '../pages/ForgetPasswordPage';
 import PrivateRoute from './PrivateRoute';
+import CareerTest from '../pages/CareerTest';
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'career-test',
+        element: (
+          <PrivateRoute>
+            <CareerTest />
           </PrivateRoute>
         ),
       },

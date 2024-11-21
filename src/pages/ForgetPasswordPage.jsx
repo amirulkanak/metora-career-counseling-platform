@@ -15,7 +15,6 @@ const ForgetPasswordPage = () => {
     event.preventDefault();
     setError('');
     const formData = Object.fromEntries(new FormData(event.target));
-    console.log(formData);
 
     if (!validateEmail(formData.email)) {
       setError('Invalid email. Please check email address.');

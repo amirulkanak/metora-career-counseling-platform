@@ -18,7 +18,6 @@ const RegisterPage = () => {
     event.preventDefault();
     setError('');
     const formData = Object.fromEntries(new FormData(event.target));
-    console.log(formData);
 
     if (!formData.fullName) {
       setError('Full name is required.');

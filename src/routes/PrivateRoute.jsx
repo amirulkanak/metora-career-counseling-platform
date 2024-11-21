@@ -5,7 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 const PrivateRoute = ({ children }) => {
   const { loading, isAuthenticated } = useAuth();
   const { pathname } = useLocation();
-  console.log(pathname);
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">

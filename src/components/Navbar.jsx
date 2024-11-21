@@ -32,6 +32,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink to={'/404'}>404</NavLink>
+            <NavLink to={'/career-test'}>Career Test</NavLink>
             <NavLink to={'/my-profile'}>My Profile</NavLink>
 
             {/* user Pic */}
