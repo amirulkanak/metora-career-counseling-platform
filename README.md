@@ -27,7 +27,7 @@ The goal is to create a seamless, intuitive platform that offers personalized ca
 - **Interview Preparation**: Users can access resources and tools to help them prepare for job interviews and improve their chances of success.
 - **Mentorship Program**: Users can sign up to be mentors or mentees and connect with others to share knowledge, advice, and support.
 
-## Project Requirements Document
+## Project Proposal Document
 - [Mentora Project Requirements Document](https://docs.google.com/document/d/1ErVVKPWEMzrmOn4bp18Vba0nfUpK-KZpqcTvSNffLKU/edit?usp=drive_link)
 
 ## Live Preview Link

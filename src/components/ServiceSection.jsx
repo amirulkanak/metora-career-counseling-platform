@@ -2,7 +2,7 @@ import ServiceCardsContainer from './ServiceCards/ServiceCardsContainer';
 
 const ServiceSection = () => {
   return (
-    <section className="max-width-wrapper mt-20">
+    <section data-aos="fade-up" className="max-width-wrapper mt-20">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">
           Your Personalized Career Journey Starts Here
