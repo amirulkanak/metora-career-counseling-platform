@@ -32,3 +32,60 @@ The goal is to create a seamless, intuitive platform that offers personalized ca
 
 ## Live Preview Link
 ### [Mentora](https://mentora-amirulkanak.web.app/)
+
+## Screenshots
+<div align="center">
+<img src="https://i.ibb.co.com/44P1PqG/mentora.png" alt="mentora" border="0">
+</div>
+
+## Installation
+### Prerequisites
+- Node.js (>=16.x)
+- npm or yarn
+
+### Dependencies
+- React
+- react-router-dom
+- react-toastify
+- react-icons
+- aos
+- swiper
+- Firebase
+### Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/amirulkanak/metora-career-counseling-platform.git
+   cd mentora
+   ```
+2. Install dependencies:
+   ```sh
+   npm install  # or yarn install
+   ```
+3. Create a `.env.local` file and configure environment variables
+   ```env
+   # Firebase configuration
+    VITE_FIREBASE_API_KEY=your-firebase-api-key
+    VITE_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+    VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+    VITE_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
+    VITE_FIREBASE_APP_ID=your-firebase-app-id
+    ```
+4. Start the development server:
+   ```sh
+   npm run dev  # or yarn dev
+   ```
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Deployment
+To deploy the application:
+```sh
+npm run build
+```
+This will generate an optimized production build.
+
+## Contributing
+Contributions are welcome! Feel free to submit issues and pull requests.
+
+## Contact
+For any inquiries, reach out via [coder.kanak@gmail.com](mailto:your-email@example.com).
