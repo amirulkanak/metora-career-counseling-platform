@@ -35,7 +35,7 @@ The goal is to create a seamless, intuitive platform that offers personalized ca
 
 ## Screenshots
 <div align="center">
-<img src="https://i.ibb.co.com/44P1PqG/mentora.png" alt="mentora" border="0">
+<img src="./src/assets/images/mentora-preview.png" alt="mentora" border="0">
 </div>
 
 ## Installation
